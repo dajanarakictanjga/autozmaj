@@ -7,13 +7,34 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 body{color:white;background:#000;}
-nav{background:#111;position:fixed;top:0;left:0;right:0;height:60px;display:flex;align-items:center;padding:0 20px;z-index:1000;}
-.hamburger{width:30px;height:22px;display:none;flex-direction:column;justify-content:space-between;cursor:pointer;}
-.hamburger span{height:4px;width:100%;background:white;border-radius:2px;transition:0.3s;}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.hamburger.active span:nth-child(2){opacity:0;}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
-.menu{list-style:none;display:flex;gap:40px;margin-left:auto;}
+nav{
+background:#111;
+position:fixed;
+top:0;left:0;right:0;
+height:60px;
+display:flex;
+align-items:center;
+padding:0 20px;
+z-index:1000;
+}
+
+/* LOGO */
+.logo{
+margin-left:auto;   /* gura logo skroz desno */
+}
+
+.logo img{
+height:40px;
+display:block;
+}
+
+/* DESKTOP MENU */
+.menu{
+list-style:none;
+display:flex;
+gap:40px;
+margin-left:40px;
+}
 .menu li a{color:white;text-decoration:none;font-weight:bold;transition:0.3s;}
 .menu li a:hover{color:#e10600;}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);opacity:0;visibility:hidden;transition:0.3s;z-index:998;}
@@ -37,13 +58,24 @@ footer{background:#111;text-align:center;padding:20px;color:#aaa;}
 </head>
 <body>
 <nav>
-<div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</div>
+
+<div class="logo">
+<a href="index.html">
+<img src="logo.png" alt="AUTO ZMAJ Logo">
+</a>
+</div>
+
 <ul class="menu" id="menu">
 <li><a href="index.html">Početna</a></li>
 <li><a href="ponuda.html">Ponuda</a></li>
 <li><a href="porucivanje.html">Poručivanje</a></li>
 <li><a href="kontakt.html">Kontakt</a></li>
 </ul>
+
 </nav>
 
 <div class="overlay" id="overlay"></div>
