@@ -43,7 +43,13 @@ footer{background:#111;text-align:center;padding:20px;color:#aaa;}
 <h1>Poručivanje</h1>
 <p>Pošaljite svoj upit koristeći formu ispod</p>
 <div class="form-container">
-<iframe src="https://formspree.io/f/xvzbdnjg" title="Poručivanje"></iframe>
+<form action="OVDE_UBACI_FORM_LINK" method="POST">
+<input type="text" name="ime" placeholder="Vaše ime" required>
+<input type="text" name="broj_sasije" placeholder="Broj šasije" required>
+<input type="tel" name="telefon" placeholder="Broj telefona" required>
+<textarea name="poruka" placeholder="Dodatne informacije"></textarea>
+<button type="submit">Pošalji upit</button>
+</form>
 </div>
 </header>
 
