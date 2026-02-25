@@ -6,140 +6,148 @@
 <title>AUTO ZMAJ | Početna</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-html{scroll-behavior:smooth;}
-body{color:white;}
-nav {
-  background: #111;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+body{color:white;background:#000;}
+
+/* NAVBAR */
+nav{
+background:#111;
+position:fixed;
+top:0;left:0;right:0;
+height:60px;
+display:flex;
+align-items:center;
+padding:0 20px;
+z-index:1000;
 }
-
-/* Meni lista */
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
+.hamburger{
+width:30px;height:22px;
+display:none;
+flex-direction:column;
+justify-content:space-between;
+cursor:pointer;
 }
-
-/* Linkovi */
-.menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  white-space: nowrap;
+.hamburger span{
+height:4px;width:100%;
+background:white;
+border-radius:2px;
+transition:0.3s;
 }
-
-.menu li a:hover {
-  color: #e10600;
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
+.menu{
+list-style:none;
+display:flex;
+gap:40px;
+margin-left:auto;
 }
-
-/* Hamburger dugme - sakriveno na desktopu */
-.menu-toggle {
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-  display: none;
+.menu li a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
 }
-
-/* Responsive: mobilni prikaz */
-@media (max-width: 768px) {
-  .menu {
-    position: fixed;
-    top: 60px; /* ispod navbar-a */
-    right: 0;
-    background: #111;
-    height: calc(100vh - 60px);
-    width: 200px;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  /* Kad je meni otvoren */
-  .menu.active {
-    transform: translateX(0);
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-  <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
-</script>
+.menu li a:hover{color:#e10600;}
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.6);
+opacity:0;
+visibility:hidden;
+transition:0.3s;
+z-index:998;
 }
-nav a{color:white;text-decoration:none;font-weight:bold;}
-nav a:hover{color:#e10600;}
+.overlay.active{opacity:1;visibility:visible;}
+
+/* POZADINA */
 header{
-  height:100vh;
-  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-  url('flajer.jpg'); /* ubaci svoju sliku flajera */
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+height:100vh;
+background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop") no-repeat center center;
+background-size:cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
 }
-header h1{font-size:60px;color:#e10600;font-weight:900;margin-bottom:10px;}
-header p{font-size:20px;color:white;margin-bottom:30px;}
-.cta{padding:15px 30px;background:#e10600;color:white;text-decoration:none;font-weight:bold;border-radius:5px;transition:0.3s;}
-.cta:hover{background:white;color:#e10600;}
-footer{background:#111;text-align:center;padding:20px;font-size:14px;color:#aaa;}
+header h1{font-size:60px;color:#e10600;margin-bottom:15px;}
+header p{font-size:20px;margin-bottom:30px;}
 
-/* Responsive */
-@media (max-width:768px){
-  nav{flex-direction:column;gap:15px;padding:15px;}
-  header h1{font-size:40px;}
-  header p{font-size:16px;}
-  .cta{padding:12px 25px;font-size:14px;}
+/* FOOTER */
+footer{
+background:#111;
+text-align:center;
+padding:20px;
+color:#aaa;
 }
-@media (max-width:480px){
-  header h1{font-size:32px;}
-  header p{font-size:14px;}
-  .cta{padding:10px 20px;font-size:12px;}
+@media(max-width:768px){
+.hamburger{display:flex;}
+.menu{
+position:fixed;
+top:60px; left:0;
+background:#111;
+height:calc(100vh - 60px);
+width:240px;
+flex-direction:column;
+gap:25px;
+padding:30px 20px;
+transform:translateX(-100%);
+transition:0.3s;
+z-index:999;
+}
+.menu.active{transform:translateX(0);}
+header h1{font-size:40px;}
+header p{font-size:16px;}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="menu-toggle" id="menu-toggle">
-    &#9776; <!-- hamburger ikona -->
-  </div>
-  <ul class="menu" id="menu">
-    <li><a href="index.html">Početna</a></li>
-    <li><a href="ponuda.html">Ponuda</a></li>
-    <li><a href="porucivanje.html">Poručivanje</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
-  </ul>
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</div>
+<ul class="menu" id="menu">
+<li><a href="index.html">Početna</a></li>
+<li><a href="ponuda.html">Ponuda</a></li>
+<li><a href="porucivanje.html">Poručivanje</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
 </nav>
+<div class="overlay" id="overlay"></div>
 
 <header>
-  <h1>AUTO ZMAJ</h1>
-  <p>Kvalitet koji pokreće</p>
-  <a href="ponuda.html" class="cta">Pogledaj ponudu</a>
+<h1>Dobrodošli u AUTO ZMAJ</h1>
+<p>Originalni i zamenski auto delovi za sve modele</p>
 </header>
 
-<footer>
-© 2026 AUTO ZMAJ
-</footer>
+<footer>© 2026 AUTO ZMAJ</footer>
+
+<script>
+const hamburger=document.getElementById("hamburger");
+const menu=document.getElementById("menu");
+const overlay=document.getElementById("overlay");
+const links=document.querySelectorAll(".menu a");
+hamburger.addEventListener("click",()=>{
+hamburger.classList.toggle("active");
+menu.classList.toggle("active");
+overlay.classList.toggle("active");
+});
+overlay.addEventListener("click",()=>{
+hamburger.classList.remove("active");
+menu.classList.remove("active");
+overlay.classList.remove("active");
+});
+links.forEach(link=>{
+link.addEventListener("click",()=>{
+hamburger.classList.remove("active");
+menu.classList.remove("active");
+overlay.classList.remove("active");
+});
+});
+</script>
 
 </body>
 </html>
