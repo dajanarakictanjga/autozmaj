@@ -4,77 +4,149 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AUTO ZMAJ | Kvalitet koji pokreće</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-body{
+*{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0b;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#0c0c0c;
 color:white;
 }
 
 header{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
+url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1400&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:40px 20px;
-background:#111;
+padding:20px;
 }
 
-h1{
+header h1{
+font-size:60px;
 color:#e10600;
-font-size:40px;
-margin:0;
+font-weight:900;
+letter-spacing:3px;
 }
 
-.tagline{
+header p{
+margin-top:15px;
+font-size:20px;
 color:#ccc;
-font-size:18px;
+}
+
+.cta{
+margin-top:30px;
+padding:15px 30px;
+background:#e10600;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:5px;
+transition:0.3s;
+}
+
+.cta:hover{
+background:white;
+color:#e10600;
 }
 
 .section{
-padding:50px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
-.services{
-max-width:800px;
-margin:auto;
-text-align:left;
+.section h2{
+font-size:35px;
+margin-bottom:40px;
+color:#e10600;
 }
 
-.services li{
-padding:10px 0;
-font-size:18px;
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.card{
+background:#1a1a1a;
+padding:30px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#e10600;
 }
 
 .steps{
 background:#111;
 }
 
-.step{
-margin:20px 0;
+.step-box{
+max-width:800px;
+margin:20px auto;
 font-size:20px;
+padding:15px;
+border-left:5px solid #e10600;
+text-align:left;
+}
+
+.delivery{
+margin-top:40px;
+font-weight:bold;
+font-size:18px;
 }
 
 .contact{
 background:#e10600;
-color:white;
-padding:40px 20px;
+padding:60px 20px;
+text-align:center;
 }
 
-.button{
+.contact h2{
+color:white;
+}
+
+.contact p{
+margin:10px 0;
+font-size:18px;
+}
+
+.contact a{
 display:inline-block;
+margin-top:15px;
 padding:15px 25px;
 background:white;
 color:#e10600;
 text-decoration:none;
 font-weight:bold;
 border-radius:5px;
-margin-top:20px;
 }
 
-.footer{
+.map{
+margin-top:30px;
+}
+
+footer{
 background:#111;
+text-align:center;
 padding:20px;
 font-size:14px;
+color:#aaa;
 }
 </style>
 </head>
@@ -82,38 +154,51 @@ font-size:14px;
 
 <header>
 <h1>AUTO ZMAJ</h1>
-<p class="tagline">Kvalitet koji pokreće</p>
+<p>Kvalitet koji pokreće</p>
+<a href="tel:069767759" class="cta">Pozovi odmah</a>
 </header>
 
 <section class="section">
 <h2>Naša ponuda</h2>
-<ul class="services">
-<li>✔ Delovi za sve vrste vozila</li>
-<li>✔ Ulja svih tipova i proizvođača</li>
-<li>✔ Akumulatori</li>
-<li>✔ Auto gume svih dimenzija</li>
-<li>✔ Kozmetika i ostala auto oprema</li>
-</ul>
-<p><strong>Besplatna dostava za iznos preko 10.000 dinara</strong></p>
+<div class="services">
+<div class="card">Delovi za sve vrste vozila</div>
+<div class="card">Ulja svih tipova i proizvođača</div>
+<div class="card">Akumulatori</div>
+<div class="card">Auto gume svih dimenzija</div>
+<div class="card">Kozmetika i ostala auto oprema</div>
+</div>
+<p class="delivery">Besplatna dostava za iznos preko 10.000 dinara</p>
 </section>
 
 <section class="section steps">
 <h2>Kako poručiti?</h2>
-<div class="step">1️⃣ Pošalji broj šasije</div>
-<div class="step">2️⃣ Ponuda stiže odmah</div>
-<div class="step">3️⃣ Deo pokupi u prodavnici</div>
+<div class="step-box">1️⃣ Pošalji broj šasije</div>
+<div class="step-box">2️⃣ Ponuda stiže odmah</div>
+<div class="step-box">3️⃣ Deo pokupi u prodavnici</div>
 </section>
 
 <section class="contact">
 <h2>Kontaktiraj nas</h2>
 <p>📞 069/76-77-59</p>
 <p>📍 Ive Lole Ribara 18c, Zmajevo</p>
-<a class="button" href="tel:069767759">Pozovi odmah</a>
+<a href="https://instagram.com" target="_blank">Zaprati Zmaja</a>
+
+<div class="map">
+<iframe 
+src="https://www.google.com/maps?q=Ive+Lole+Ribara+18c,+Zmajevo&output=embed"
+width="100%" 
+height="300" 
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+</div>
+
 </section>
 
-<div class="footer">
+<footer>
 © 2026 AUTO ZMAJ | Sva prava zadržana
-</div>
+</footer>
 
 </body>
 </html>
