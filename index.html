@@ -3,190 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AUTO ZMAJ | Auto delovi Zmajevo</title>
-<meta name="description" content="AUTO ZMAJ Zmajevo - Auto delovi, ulja, akumulatori, gume. Pozovi 069/76-77-59">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-
+<title>AUTO ZMAJ | Početna</title>
+<link rel="stylesheet" href="style.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
-html{scroll-behavior:smooth;}
-body{background:#0c0c0c;color:white;}
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:#111;
-display:flex;
-justify-content:center;
-gap:40px;
-padding:20px;
-z-index:1000;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#e10600;
-}
-
-header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1400&q=80');
-background-size:cover;
-background-position:center;
-padding:20px;
-}
-
-header h1{font-size:60px;color:#e10600;font-weight:900;}
-header p{margin-top:15px;font-size:20px;color:#ccc;}
-
-.section{
-padding:100px 20px;
-text-align:center;
-}
-
-.section h2{
-font-size:35px;
-margin-bottom:40px;
-color:#e10600;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1100px;
-margin:auto;
-}
-
-.card{
-background:#1a1a1a;
-padding:30px;
-border-radius:10px;
-}
-
-.steps{background:#111;}
-
-.step-box{
-max-width:800px;
-margin:20px auto;
-font-size:20px;
-padding:15px;
-border-left:5px solid #e10600;
-text-align:left;
-}
-
-.contact{
-background:#e10600;
-padding:80px 20px;
-text-align:center;
-}
-
-.contact h2{color:white;}
-
-.contact a{
-display:inline-block;
-margin:10px;
-padding:15px 25px;
-background:white;
-color:#e10600;
-text-decoration:none;
-font-weight:bold;
-border-radius:5px;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50%;
-text-decoration:none;
-font-weight:bold;
-}
-
-footer{
-background:#111;
-text-align:center;
-padding:20px;
-font-size:14px;
-color:#aaa;
-}
+body{margin:0;font-family:Arial;background:#0c0c0c;color:white;text-align:center;}
+nav{background:#111;padding:20px;}
+nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:#e10600;}
+header{padding:100px 20px;}
+h1{color:#e10600;font-size:50px;}
+footer{background:#111;padding:20px;margin-top:50px;}
 </style>
 </head>
-
 <body>
 
 <nav>
-<a href="#pocetna">Početna</a>
-<a href="#ponuda">Ponuda</a>
-<a href="#kako">Kako poručiti</a>
-<a href="#kontakt">Kontakt</a>
+<a href="index.html">Početna</a>
+<a href="ponuda.html">Ponuda</a>
+<a href="porucivanje.html">Pošalji broj šasije</a>
+<a href="kontakt.html">Kontakt</a>
 </nav>
 
-<header id="pocetna">
+<header>
 <h1>AUTO ZMAJ</h1>
 <p>Kvalitet koji pokreće</p>
+<p>Auto delovi, ulja, akumulatori, gume</p>
 </header>
 
-<section class="section" id="ponuda">
-<h2>Naša ponuda</h2>
-<div class="services">
-<div class="card">Delovi za sve vrste vozila</div>
-<div class="card">Ulja svih tipova i proizvođača</div>
-<div class="card">Akumulatori</div>
-<div class="card">Auto gume svih dimenzija</div>
-<div class="card">Kozmetika i ostala auto oprema</div>
-</div>
-</section>
-
-<section class="section steps" id="kako">
-<h2>Kako poručiti?</h2>
-<div class="step-box">1️⃣ Pošalji broj šasije</div>
-<div class="step-box">2️⃣ Ponuda stiže odmah</div>
-<div class="step-box">3️⃣ Deo pokupi u prodavnici</div>
-</section>
-
-<section class="contact" id="kontakt">
-<h2>Kontakt</h2>
-<p>📞 069/76-77-59</p>
-<p>📍 Ive Lole Ribara 18c, Zmajevo</p>
-
-<a href="https://instagram.com" target="_blank">Instagram</a>
-
-<div style="margin-top:40px;">
-<h3>QR Kodovi</h3>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://instagram.com">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.google.com/maps?q=Ive+Lole+Ribara+18c,+Zmajevo">
-</div>
-
-<div style="margin-top:30px;">
-<iframe 
-src="https://www.google.com/maps?q=Ive+Lole+Ribara+18c,+Zmajevo&output=embed"
-width="100%" height="300" style="border:0;"></iframe>
-</div>
-
-</section>
-
-<a class="whatsapp" href="https://wa.me/38169767759" target="_blank">WA</a>
-
 <footer>
-© 2026 AUTO ZMAJ | Auto delovi Zmajevo
+© 2026 AUTO ZMAJ
 </footer>
 
 </body>
