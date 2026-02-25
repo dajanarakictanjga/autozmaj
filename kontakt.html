@@ -4,228 +4,99 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AUTO ZMAJ | Kontakt</title>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body{color:white;background:#000;}
-
-/* NAVBAR */
+body{background:#0c0c0c;color:white;}
+html{scroll-behavior:smooth;}
 nav{
-background:#111;
-position:fixed;
-top:0;left:0;right:0;
-height:60px;
-display:flex;
-align-items:center;
-padding:0 20px;
-z-index:1000;
+  background:#111;
+  padding:20px;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  gap:40px;
 }
-
-.hamburger{
-width:30px;height:22px;
-display:none;
-flex-direction:column;
-justify-content:space-between;
-cursor:pointer;
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
-
-.hamburger span{
-height:4px;width:100%;
-background:white;
-border-radius:2px;
-transition:0.3s;
+nav a:hover{color:#e10600;}
+.section{
+  padding:100px 20px 60px 20px;
+  text-align:center;
 }
-
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.hamburger.active span:nth-child(2){opacity:0;}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
-
-.menu{
-list-style:none;
-display:flex;
-gap:40px;
-margin-left:auto;
+.section h2{
+  color:#e10600;
+  margin-bottom:30px;
+  font-size:35px;
 }
-
-.menu li a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
+.contact-info p{
+  margin:10px 0;
+  font-size:18px;
 }
-
-.menu li a:hover{color:#e10600;}
-
-.overlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.6);
-opacity:0;
-visibility:hidden;
-transition:0.3s;
-z-index:998;
+.qr{
+  margin-top:30px;
 }
-.overlay.active{
-opacity:1;
-visibility:visible;
-}
-
-/* POZADINA */
-header{
-height:50vh;
-background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop") no-repeat center center;
-background-size:cover;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 20px;
-}
-
-header h1{font-size:50px;color:#e10600;margin-bottom:10px;}
-header p{font-size:18px;margin-bottom:20px;}
-
-/* KONTAKT SEKCIJA */
-section.kontakt{
-max-width:1200px;
-margin:50px auto;
-padding:0 20px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-color:#fff;
-}
-
-.kontakt div{
-background:rgba(0,0,0,0.6);
-padding:20px;
-border-radius:10px;
-}
-
-.kontakt h2{color:#e10600;margin-bottom:15px;}
-.kontakt p{margin-bottom:10px;}
-
-/* QR kod */
 .qr img{
-width:150px;
-height:150px;
+  width:200px;
+  height:200px;
 }
-
-/* FOOTER */
+iframe{
+  margin-top:30px;
+  width:100%;
+  height:300px;
+  border:0;
+}
 footer{
-background:#111;
-text-align:center;
-padding:20px;
-color:#aaa;
-}
-
-@media(max-width:768px){
-.hamburger{display:flex;}
-.menu{
-position:fixed;
-top:60px;
-left:0;
-background:#111;
-height:calc(100vh - 60px);
-width:240px;
-flex-direction:column;
-gap:25px;
-padding:30px 20px;
-transform:translateX(-100%);
-transition:0.3s;
-z-index:999;
-}
-.menu.active{transform:translateX(0);}
-header h1{font-size:36px;}
-header p{font-size:14px;}
-section.kontakt{
-grid-template-columns:1fr;
-}
-.qr img{
-margin:0 auto 20px auto;
-display:block;
-}
+  background:#111;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  color:#aaa;
+  margin-top:50px;
 }
 </style>
 </head>
 <body>
 
 <nav>
-<div class="hamburger" id="hamburger">
-<span></span><span></span><span></span>
-</div>
-
-<ul class="menu" id="menu">
-<li><a href="index.html">Početna</a></li>
-<li><a href="ponuda.html">Ponuda</a></li>
-<li><a href="porucivanje.html">Poručivanje</a></li>
-<li><a href="kontakt.html">Kontakt</a></li>
-</ul>
+<a href="index.html">Početna</a>
+<a href="ponuda.html">Ponuda</a>
+<a href="porucivanje.html">Pošalji broj šasije</a>
+<a href="kontakt.html">Kontakt</a>
 </nav>
 
-<div class="overlay" id="overlay"></div>
+<div class="section">
+<h2>Kontakt</h2>
 
-<header>
-<h1>Kontakt</h1>
-<p>Kontaktirajte nas za više informacija</p>
-</header>
-
-<section class="kontakt">
-<div>
-<h2>Adresa</h2>
-<p>Ulica Marka Markovića 12, Beograd</p>
-<p>Telefon: +381 11 1234567</p>
-<p>Email: office@autozmaj.rs</p>
-</div>
-
-<div>
-<h2>Mapa</h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.123456!2d20.456789!3d44.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7028abcdef:0xabcdef123456!2sAUTO%20ZMAJ!5e0!3m2!1sen!2srs!4v1676543210" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<div class="contact-info">
+<p>📞 Telefon: 069/76-77-59</p>
+<p>📍 Adresa: Ive Lole Ribara 18c, Zmajevo</p>
+<p>📧 Email: autozmaj@example.com</p>
 </div>
 
 <div class="qr">
-<h2>QR kod Instagram</h2>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/autozmaj/" alt="QR Instagram">
-<p>Skenerom otvorite naš Instagram</p>
+<h3>Prati nas na Instagramu</h3>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://instagram.com" alt="QR kod Instagram">
+<p>Skenerom QR koda otvorite naš Instagram profil</p>
 </div>
 
 <div>
-<h2>Instagram</h2>
-<p><a href="https://www.instagram.com/autozmaj/" target="_blank" style="color:#e10600;">@autozmaj</a></p>
+<h3>Lokacija radnje</h3>
+<iframe 
+src="https://www.google.com/maps?q=Ive+Lole+Ribara+18c,+Zmajevo&output=embed">
+</iframe>
 </div>
-</section>
 
-<footer>© 2026 AUTO ZMAJ</footer>
+</div>
 
-<script>
-const hamburger=document.getElementById("hamburger");
-const menu=document.getElementById("menu");
-const overlay=document.getElementById("overlay");
-const links=document.querySelectorAll(".menu a");
-
-hamburger.addEventListener("click",()=>{
-hamburger.classList.toggle("active");
-menu.classList.toggle("active");
-overlay.classList.toggle("active");
-});
-
-overlay.addEventListener("click",()=>{
-hamburger.classList.remove("active");
-menu.classList.remove("active");
-overlay.classList.remove("active");
-});
-
-links.forEach(link=>{
-link.addEventListener("click",()=>{
-hamburger.classList.remove("active");
-menu.classList.remove("active");
-overlay.classList.remove("active");
-});
-});
-</script>
+<footer>
+© 2026 AUTO ZMAJ
+</footer>
 
 </body>
 </html>
