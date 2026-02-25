@@ -1,145 +1,181 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AUTO ZMAJ | Ponuda</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUTO ZMAJ | Početna</title>
+
 <style>
-  * {
-    margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;
-  }
-  body {
-    background: #0c0c0c;
-    color: white;
-    text-align: center;
-  }
-  nav {
-    background: #111;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 1000;
-  }
-  .menu-toggle {
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    display: none;
-  }
-  .menu {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-  }
-  .menu li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    white-space: nowrap;
-    transition: color 0.3s;
-  }
-  .menu li a:hover {
-    color: #e10600;
-  }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{color:white;background:#000;}
 
-  .section {
-    padding: 100px 20px 60px;
-  }
-  .section h2 {
-    color: #e10600;
-    margin-bottom: 40px;
-    font-size: 35px;
-  }
-  .card {
-    background: #1a1a1a;
-    margin: 15px auto;
-    padding: 20px;
-    max-width: 400px;
-    border-radius: 10px;
-  }
-  footer {
-    background: #111;
-    padding: 20px;
-    margin-top: 50px;
-    color: #aaa;
-    text-align: center;
-  }
+/* NAVBAR */
+nav{
+background:#111;
+position:fixed;
+top:0;left:0;right:0;
+height:60px;
+display:flex;
+align-items:center;
+padding:0 20px;
+z-index:1000;
+}
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-    .menu {
-      position: fixed;
-      top: 60px;
-      right: 0;
-      background: #111;
-      height: calc(100vh - 60px);
-      width: 200px;
-      flex-direction: column;
-      gap: 20px;
-      padding: 20px;
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
-      z-index: 999;
-    }
-    .menu.active {
-      transform: translateX(0);
-    }
-    nav {
-      justify-content: space-between;
-    }
-    .section h2 {
-      font-size: 28px;
-    }
-    .card {
-      max-width: 90%;
-    }
-  }
-  @media (max-width: 480px) {
-    .section h2 {
-      font-size: 24px;
-    }
-  }
+.hamburger{
+width:30px;height:22px;
+display:none;
+flex-direction:column;
+justify-content:space-between;
+cursor:pointer;
+}
+
+.hamburger span{
+height:4px;width:100%;
+background:white;
+border-radius:2px;
+transition:0.3s;
+}
+
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
+
+.menu{
+list-style:none;
+display:flex;
+gap:40px;
+margin-left:auto;
+}
+
+.menu li a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.menu li a:hover{color:#e10600;}
+
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.6);
+opacity:0;
+visibility:hidden;
+transition:0.3s;
+z-index:998;
+}
+.overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+/* POZADINA */
+header{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop") no-repeat center center;
+background-size:cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+}
+
+header h1{font-size:60px;color:#e10600;margin-bottom:15px;}
+header p{font-size:20px;margin-bottom:30px;}
+
+.cta{
+padding:15px 30px;
+background:#e10600;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:5px;
+transition:0.3s;
+}
+.cta:hover{background:white;color:#e10600;}
+
+footer{
+background:#111;
+text-align:center;
+padding:20px;
+color:#aaa;
+}
+
+@media(max-width:768px){
+.hamburger{display:flex;}
+.menu{
+position:fixed;
+top:60px;
+left:0;
+background:#111;
+height:calc(100vh - 60px);
+width:240px;
+flex-direction:column;
+gap:25px;
+padding:30px 20px;
+transform:translateX(-100%);
+transition:0.3s;
+z-index:999;
+}
+.menu.active{transform:translateX(0);}
+header h1{font-size:40px;}
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <ul class="menu" id="menu">
-    <li><a href="index.html">Početna</a></li>
-    <li><a href="ponuda.html">Ponuda</a></li>
-    <li><a href="porucivanje.html">Poručivanje</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
-  </ul>
-</nav>
-
-<div class="section">
-  <h2>Naša ponuda</h2>
-  <div class="card">Delovi za sve vrste vozila</div>
-  <div class="card">Ulja svih tipova i proizvođača</div>
-  <div class="card">Akumulatori</div>
-  <div class="card">Auto gume svih dimenzija</div>
-  <div class="card">Kozmetika i dodatna oprema</div>
-  <p style="margin-top:30px; font-weight: bold;">Besplatna dostava preko 10.000 dinara</p>
+<div class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
 </div>
 
-<footer>
-  © 2026 AUTO ZMAJ
-</footer>
+<ul class="menu" id="menu">
+<li><a href="index.html">Početna</a></li>
+<li><a href="ponuda.html">Ponuda</a></li>
+<li><a href="porucivanje.html">Poručivanje</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+<header>
+<h1>Naša Ponuda</h1>
+<p>Originalni i zamenski auto delovi</p>
+</header>
+
+<footer>© 2026 AUTO ZMAJ</footer>
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  });
+const hamburger=document.getElementById("hamburger");
+const menu=document.getElementById("menu");
+const overlay=document.getElementById("overlay");
+const links=document.querySelectorAll(".menu a");
+
+hamburger.addEventListener("click",()=>{
+hamburger.classList.toggle("active");
+menu.classList.toggle("active");
+overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click",()=>{
+hamburger.classList.remove("active");
+menu.classList.remove("active");
+overlay.classList.remove("active");
+});
+
+links.forEach(link=>{
+link.addEventListener("click",()=>{
+hamburger.classList.remove("active");
+menu.classList.remove("active");
+overlay.classList.remove("active");
+});
+});
 </script>
 
 </body>
