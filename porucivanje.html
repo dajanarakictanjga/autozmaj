@@ -6,13 +6,14 @@
 <title>AUTO ZMAJ | Pošalji broj šasije</title>
 <style>
 body{margin:0;font-family:Arial;background:#0c0c0c;color:white;text-align:center;}
-nav{background:#111;padding:20px;}
-nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav{background:#111;padding:20px;display:flex;justify-content:center;gap:40px;}
+nav a{color:white;text-decoration:none;font-weight:bold;}
 nav a:hover{color:#e10600;}
-form{max-width:400px;margin:40px auto;display:flex;flex-direction:column;gap:15px;}
+form{max-width:400px;margin:100px auto;display:flex;flex-direction:column;gap:15px;}
 input,textarea{padding:12px;border:none;border-radius:5px;}
 button{padding:15px;background:#e10600;color:white;border:none;font-weight:bold;cursor:pointer;}
-footer{background:#111;padding:20px;margin-top:50px;}
+button:hover{background:white;color:#e10600;}
+footer{background:#111;padding:20px;margin-top:50px;color:#aaa;}
 </style>
 </head>
 <body>
@@ -24,14 +25,15 @@ footer{background:#111;padding:20px;margin-top:50px;}
 <a href="kontakt.html">Kontakt</a>
 </nav>
 
-<h2 style="margin-top:40px;color:#e10600;">Pošalji broj šasije</h2>
+<h2 style="margin-top:100px;color:#e10600;">Pošalji broj šasije</h2>
 
-<form action="https://formspree.io/f/xvzbdnjg" method="POST">
-<input type="text" name="ime" placeholder="Vaše ime" required>
-<input type="text" name="broj_sasije" placeholder="Broj šasije" required>
+<form action="OVDE_UBACI_SVOJ_LINK" method="POST">
+<input type="hidden" name="_subject" value="Novi upit - AUTO ZMAJ">
+<input type="text" name="ime" placeholder="Ime i prezime" required>
+<input type="text" name="broj_sasije" placeholder="Broj šasije (VIN)" required>
 <input type="tel" name="telefon" placeholder="Broj telefona" required>
-<textarea name="poruka" placeholder="Dodatne informacije"></textarea>
-<button type="submit">Pošalji upit</button>
+<textarea name="poruka" placeholder="Dodatne informacije (model, godište, deo koji vam treba)"></textarea>
+<button type="submit">Pošalji zahtev za proveru</button>
 </form>
 
 <footer>
