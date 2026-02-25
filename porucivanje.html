@@ -4,193 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AUTO ZMAJ | Poručivanje</title>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body{color:white;background:#000;}
-
-/* NAVBAR */
-nav{
-background:#111;
-position:fixed;
-top:0;left:0;right:0;
-height:60px;
-display:flex;
-align-items:center;
-padding:0 20px;
-z-index:1000;
-}
-
-.hamburger{
-width:30px;height:22px;
-display:none;
-flex-direction:column;
-justify-content:space-between;
-cursor:pointer;
-}
-
-.hamburger span{
-height:4px;width:100%;
-background:white;
-border-radius:2px;
-transition:0.3s;
-}
-
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.hamburger.active span:nth-child(2){opacity:0;}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px);}
-
-.menu{
-list-style:none;
-display:flex;
-gap:40px;
-margin-left:auto;
-}
-
-.menu li a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-.menu li a:hover{color:#e10600;}
-
-.overlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.6);
-opacity:0;
-visibility:hidden;
-transition:0.3s;
-z-index:998;
-}
-.overlay.active{
-opacity:1;
-visibility:visible;
-}
-
-/* POZADINA */
-header{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop") no-repeat center center;
-background-size:cover;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 20px;
-}
-
-header h1{font-size:60px;color:#e10600;margin-bottom:15px;}
-header p{font-size:20px;margin-bottom:30px;}
-
-/* FORM SECTION */
-.form-container{
-background:rgba(0,0,0,0.6);
-padding:20px;
-border-radius:10px;
-width:100%;
-max-width:500px;
-text-align:center;
-}
-
-.form-container iframe{
-width:100%;
-height:500px;
-border:none;
-border-radius:10px;
-}
-
-footer{
-background:#111;
-text-align:center;
-padding:20px;
-color:#aaa;
-}
-
-@media(max-width:768px){
-.hamburger{display:flex;}
-.menu{
-position:fixed;
-top:60px;
-left:0;
-background:#111;
-height:calc(100vh - 60px);
-width:240px;
-flex-direction:column;
-gap:25px;
-padding:30px 20px;
-transform:translateX(-100%);
-transition:0.3s;
-z-index:999;
-}
-.menu.active{transform:translateX(0);}
-header h1{font-size:40px;}
-header p{font-size:16px;}
-}
+body{margin:0;font-family:Arial;background:#0c0c0c;color:white;text-align:center;}
+nav{background:#111;padding:20px;display:flex;justify-content:center;gap:40px;}
+nav a{color:white;text-decoration:none;font-weight:bold;}
+nav a:hover{color:#e10600;}
+form{max-width:400px;margin:100px auto;display:flex;flex-direction:column;gap:15px;}
+input,textarea{padding:12px;border:none;border-radius:5px;}
+button{padding:15px;background:#e10600;color:white;border:none;font-weight:bold;cursor:pointer;}
+button:hover{background:white;color:#e10600;}
+footer{background:#111;padding:20px;margin-top:50px;color:#aaa;}
 </style>
 </head>
 <body>
 
 <nav>
-<div class="hamburger" id="hamburger">
-<span></span><span></span><span></span>
-</div>
-
-<ul class="menu" id="menu">
-<li><a href="index.html">Početna</a></li>
-<li><a href="ponuda.html">Ponuda</a></li>
-<li><a href="porucivanje.html">Poručivanje</a></li>
-<li><a href="kontakt.html">Kontakt</a></li>
-</ul>
+<a href="index.html">Početna</a>
+<a href="ponuda.html">Ponuda</a>
+<a href="porucivanje.html">Poručivanje</a>
+<a href="kontakt.html">Kontakt</a>
 </nav>
 
-<div class="overlay" id="overlay"></div>
+<h2 style="margin-top:100px;color:#e10600;">Pošalji broj šasije</h2>
 
-<header>
-<h1>Poručivanje</h1>
-<p>Pošaljite broj šasije za proveru delova</p>
+<form action="https://formspree.io/f/xvzbdnjg" method="POST">
+<input type="hidden" name="_subject" value="Novi upit - AUTO ZMAJ">
+<input type="text" name="ime" placeholder="Ime i prezime" required>
+<input type="text" name="broj_sasije" placeholder="Broj šasije (VIN)" required>
+<input type="tel" name="telefon" placeholder="Broj telefona" required>
+<textarea name="poruka" placeholder="Dodatne informacije (model, godište, deo koji vam treba)"></textarea>
+<button type="submit">Pošalji zahtev za proveru</button>
+</form>
 
-<div class="form-container">
-<!-- OVDE UBACI LINK DO FORMULARA -->
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_example_form_link/viewform?embedded=true" 
-title="Poručivanje"></iframe>
-</div>
-
-</header>
-
-<footer>© 2026 AUTO ZMAJ</footer>
-
-<script>
-const hamburger=document.getElementById("hamburger");
-const menu=document.getElementById("menu");
-const overlay=document.getElementById("overlay");
-const links=document.querySelectorAll(".menu a");
-
-hamburger.addEventListener("click",()=>{
-hamburger.classList.toggle("active");
-menu.classList.toggle("active");
-overlay.classList.toggle("active");
-});
-
-overlay.addEventListener("click",()=>{
-hamburger.classList.remove("active");
-menu.classList.remove("active");
-overlay.classList.remove("active");
-});
-
-links.forEach(link=>{
-link.addEventListener("click",()=>{
-hamburger.classList.remove("active");
-menu.classList.remove("active");
-overlay.classList.remove("active");
-});
-});
-</script>
+<footer>
+© 2026 AUTO ZMAJ
+</footer>
 
 </body>
 </html>
