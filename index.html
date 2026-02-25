@@ -8,16 +8,80 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 html{scroll-behavior:smooth;}
 body{color:white;}
-nav{
-  background:#111;
-  padding:20px;
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:1000;
-  display:flex;
-  justify-content:center;
-  gap:40px;
+nav {
+  background: #111;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Meni lista */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Linkovi */
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.menu li a:hover {
+  color: #e10600;
+}
+
+/* Hamburger dugme - sakriveno na desktopu */
+.menu-toggle {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsive: mobilni prikaz */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    top: 60px; /* ispod navbar-a */
+    right: 0;
+    background: #111;
+    height: calc(100vh - 60px);
+    width: 200px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Kad je meni otvoren */
+  .menu.active {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>
 }
 nav a{color:white;text-decoration:none;font-weight:bold;}
 nav a:hover{color:#e10600;}
@@ -56,10 +120,15 @@ footer{background:#111;text-align:center;padding:20px;font-size:14px;color:#aaa;
 <body>
 
 <nav>
-  <a href="index.html">Početna</a>
-  <a href="ponuda.html">Ponuda</a>
-  <a href="porucivanje.html">Poručivanje</a>
-  <a href="kontakt.html">Kontakt</a>
+  <div class="menu-toggle" id="menu-toggle">
+    &#9776; <!-- hamburger ikona -->
+  </div>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="ponuda.html">Ponuda</a></li>
+    <li><a href="porucivanje.html">Poručivanje</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
 </nav>
 
 <header>
