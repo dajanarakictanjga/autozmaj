@@ -13,15 +13,25 @@ nav a:hover{color:#e10600;}
 .section h2{color:#e10600;margin-bottom:40px;font-size:35px;}
 .card{background:#1a1a1a;margin:15px auto;padding:20px;max-width:400px;border-radius:10px;}
 footer{background:#111;padding:20px;margin-top:50px;color:#aaa;}
+/* Responsive */
+@media (max-width:768px){
+  nav{flex-direction:column;gap:15px;padding:15px;}
+  .section h2{font-size:28px;}
+  .card{max-width:90%;}
+}
+@media (max-width:480px){
+  .section h2{font-size:24px;}
+  .card{padding:15px;}
+}
 </style>
 </head>
 <body>
 
 <nav>
-<a href="index.html">Početna</a>
-<a href="ponuda.html">Ponuda</a>
-<a href="porucivanje.html">Poručivanje</a>
-<a href="kontakt.html">Kontakt</a>
+  <a href="index.html">Početna</a>
+  <a href="ponuda.html">Ponuda</a>
+  <a href="porucivanje.html">Poručivanje</a>
+  <a href="kontakt.html">Kontakt</a>
 </nav>
 
 <div class="section">
