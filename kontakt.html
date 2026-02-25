@@ -18,15 +18,29 @@ nav a:hover{color:#e10600;}
 .qr img{width:200px;height:200px;}
 iframe{margin-top:30px;width:100%;height:300px;border:0;}
 footer{background:#111;text-align:center;padding:20px;font-size:14px;color:#aaa;margin-top:50px;}
+/* Responsive */
+@media (max-width:768px){
+  nav{flex-direction:column;gap:15px;padding:15px;}
+  .section h2{font-size:28px;}
+  .contact-info p{font-size:16px;}
+  .qr img{width:150px;height:150px;}
+  iframe{height:250px;}
+}
+@media (max-width:480px){
+  .section h2{font-size:24px;}
+  .contact-info p{font-size:14px;}
+  .qr img{width:120px;height:120px;}
+  iframe{height:200px;}
+}
 </style>
 </head>
 <body>
 
 <nav>
-<a href="index.html">Početna</a>
-<a href="ponuda.html">Ponuda</a>
-<a href="porucivanje.html">Poručivanje</a>
-<a href="kontakt.html">Kontakt</a>
+  <a href="index.html">Početna</a>
+  <a href="ponuda.html">Ponuda</a>
+  <a href="porucivanje.html">Poručivanje</a>
+  <a href="kontakt.html">Kontakt</a>
 </nav>
 
 <div class="section">
@@ -46,9 +60,7 @@ footer{background:#111;text-align:center;padding:20px;font-size:14px;color:#aaa;
 
 <div>
 <h3>Lokacija radnje</h3>
-<iframe 
-src="https://www.google.com/maps?q=Ive+Lole+Ribara+18c,+Zmajevo&output=embed">
-</iframe>
+<iframe src="https://www.google.com/maps?q=Ive+Lole+Ribara+18c,+Zmajevo&output=embed"></iframe>
 </div>
 
 </div>
