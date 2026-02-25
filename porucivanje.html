@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUTO ZMAJ | Pošalji broj šasije</title>
+<style>
+body{margin:0;font-family:Arial;background:#0c0c0c;color:white;text-align:center;}
+nav{background:#111;padding:20px;}
+nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:#e10600;}
+form{max-width:400px;margin:40px auto;display:flex;flex-direction:column;gap:15px;}
+input,textarea{padding:12px;border:none;border-radius:5px;}
+button{padding:15px;background:#e10600;color:white;border:none;font-weight:bold;cursor:pointer;}
+footer{background:#111;padding:20px;margin-top:50px;}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="index.html">Početna</a>
+<a href="ponuda.html">Ponuda</a>
+<a href="porucivanje.html">Pošalji broj šasije</a>
+<a href="kontakt.html">Kontakt</a>
+</nav>
+
+<h2 style="margin-top:40px;color:#e10600;">Pošalji broj šasije</h2>
+
+<form action="OVDE_UBACI_FORM_LINK" method="POST">
+<input type="text" name="ime" placeholder="Vaše ime" required>
+<input type="text" name="broj_sasije" placeholder="Broj šasije" required>
+<input type="tel" name="telefon" placeholder="Broj telefona" required>
+<textarea name="poruka" placeholder="Dodatne informacije"></textarea>
+<button type="submit">Pošalji upit</button>
+</form>
+
+<footer>
+© 2026 AUTO ZMAJ
+</footer>
+
+</body>
+</html>
