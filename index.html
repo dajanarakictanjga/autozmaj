@@ -4,15 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AUTO ZMAJ | Početna</title>
-<link rel="stylesheet" href="style.css">
 <style>
-body{margin:0;font-family:Arial;background:#0c0c0c;color:white;text-align:center;}
-nav{background:#111;padding:20px;}
-nav a{color:white;margin:0 15px;text-decoration:none;font-weight:bold;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+html{scroll-behavior:smooth;}
+body{color:white;}
+nav{
+  background:#111;
+  padding:20px;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
 nav a:hover{color:#e10600;}
-header{padding:100px 20px;}
-h1{color:#e10600;font-size:50px;}
-footer{background:#111;padding:20px;margin-top:50px;}
+header{
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1400&q=80');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+header h1{
+  font-size:60px;
+  color:#e10600;
+  font-weight:900;
+  margin-bottom:10px;
+}
+header p{
+  font-size:20px;
+  color:#fff;
+  margin-bottom:30px;
+}
+.cta{
+  padding:15px 30px;
+  background:#e10600;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:5px;
+  transition:0.3s;
+}
+.cta:hover{
+  background:white;
+  color:#e10600;
+}
+footer{
+  background:#111;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  color:#aaa;
+}
 </style>
 </head>
 <body>
@@ -27,7 +82,7 @@ footer{background:#111;padding:20px;margin-top:50px;}
 <header>
 <h1>AUTO ZMAJ</h1>
 <p>Kvalitet koji pokreće</p>
-<p>Auto delovi, ulja, akumulatori, gume</p>
+<a href="ponuda.html" class="cta">Pogledaj ponudu</a>
 </header>
 
 <footer>
